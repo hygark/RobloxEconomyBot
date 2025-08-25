@@ -1,9 +1,5 @@
 # **RobloxEconomyBot**
 
-## Descrição:
-RobloxEconomyBot.lua é um script Lua projetado para automatizar mecânicas de economia em jogos Roblox. Ele coleta itens do workspace, analisa o valor do inventário do jogador e inicia trocas com NPCs quando um limiar é atingido. Este script foi criado para fins de teste e automação em servidores privados, inspirado em mecânicas de farming e comércio em jogos como Roblox.
-Aviso Importante: Este script é para uso educacional e em ambientes privados. Automação em jogos Roblox pode violar os Termos de Serviço do Roblox e resultar em banimentos. Use com responsabilidade e apenas em seus próprios jogos ou servidores de teste.
-
 ## Funcionalidades:
 Coleta de Itens: Escaneia e coleta itens do Workspace.Items usando um RemoteEvent (CollectItemEvent).
 Análise de Inventário: Calcula o valor total dos itens no inventário do jogador.
