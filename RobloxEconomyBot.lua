@@ -1,5 +1,5 @@
 -- RobloxEconomyBot.lua - Bot para automação de economia em Roblox
--- Criado por Inflavelle (2022)
+-- Criado por hygark (2022)
 -- Descrição: Este script automatiza a coleta de itens, análise de inventário e trocas com NPCs em jogos Roblox que possuem mecânicas de economia.
 -- Nota: Use apenas em servidores privados ou para testes. Automação pode violar os Termos de Serviço do Roblox.
 
