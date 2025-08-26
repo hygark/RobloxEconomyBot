@@ -1,69 +1,76 @@
 # **RobloxEconomyBot**
 
-## Funcionalidades:
-Coleta de Itens: Escaneia e coleta itens do Workspace.Items usando um RemoteEvent (CollectItemEvent).
-Análise de Inventário: Calcula o valor total dos itens no inventário do jogador.
-Troca Automática: Inicia trocas com um NPC específico quando o valor do inventário atinge um limiar configurável.
-Logging Opcional: Envia logs para um webhook (ex.: Discord) para monitorar ações.
-Limites de Segurança: Limita o número de itens coletados por ciclo para evitar sobrecarga.
+## Features:
 
-## Requisitos:
-Roblox Studio ou Executor: Para executar o script, use Roblox Studio (como LocalScript em StarterPlayerScripts) ou um executor como KRNL.
+Item Collection: Scans and collects items from Workspace.Items using a RemoteEvent (CollectItemEvent).
+Inventory Analysis: Calculates the total value of items in the player’s inventory.
+Automatic Trading: Initiates trades with a specific NPC when the inventory value reaches a configurable threshold.
+Optional Logging: Sends logs to a webhook (e.g., Discord) to monitor actions.
+Safety Limits: Restricts the number of items collected per cycle to prevent overload.
 
-Estrutura do Jogo: O jogo deve ter:
-Um folder Workspace.Items com modelos de itens.
-RemoteEvents: CollectItemEvent e TradeEvent em ReplicatedStorage.
-Um NPC chamado "NPCTrader" em Workspace.
-Um folder "Inventory" no personagem local com itens valorizados.
-Bibliotecas: Nenhuma externa necessária, mas HttpService é usado para logging (habilite nas configurações do jogo se for no Studio).
+## Requirements:
 
-## Instalação:
+Roblox Studio or Executor: To run the script, use Roblox Studio (as a LocalScript in StarterPlayerScripts) or an executor such as KRNL.
 
-Crie um Repositório no GitHub (opcional para versionamento):
-Vá para github.com e crie um novo repositório chamado "RobloxEconomyBot".
-Clone o repo para o seu PC: git clone https://github.com/hygark/RobloxEconomyBot.git.
-Adicione o Script:
-Copie o conteúdo de RobloxEconomyBot.lua para um arquivo Lua no seu projeto Roblox ou executor.
+Game Structure: The game must have:
+A folder Workspace.Items with item models.
+RemoteEvents: CollectItemEvent and TradeEvent in ReplicatedStorage.
+An NPC named "NPCTrader" in Workspace.
+An "Inventory" folder in the local character with valued items.
+Libraries: No external libraries required, but HttpService is used for logging (enable it in game settings if in Studio).
 
-## Configuração no Roblox Studio:
-Abra seu jogo no Roblox Studio.
-Insira o script como LocalScript em StarterPlayer > StarterPlayerScripts.
-Habilite HttpRequests em Game Settings > Security para o webhook de logging.
+## Installation:
 
-## Configuração em Executor:
-Use um executor como KRNL (https://krnl.dev/).
-Carregue o script via loadstring(game:HttpGet("https://raw.githubusercontent.com/inflavelle/RobloxEconomyBot/main/RobloxEconomyBot.lua"))().
+Create a Repository on GitHub (optional for versioning):
+Go to github.com and create a new repository called "RobloxEconomyBot".
+Clone the repo to your PC: git clone [https://github.com/hygark/RobloxEconomyBot.git](https://github.com/hygark/RobloxEconomyBot.git).
+Add the Script:
+Copy the content of RobloxEconomyBot.lua into a Lua file in your Roblox project or executor.
 
-## Como Fazer Funcionar?:
-Ajuste as Configurações:
-Abra o script e edite a tabela Settings:
-CollectInterval: Tempo entre coletas (em segundos).
-TradeThreshold: Valor mínimo para troca.
-LogWebhook: URL de um webhook Discord (crie um em Discord > Server Settings > Integrations).
-NPCTraderName: Nome do NPC para troca.
-MaxItemsToCollect: Limite por ciclo.
+## Roblox Studio Setup:
 
-## Execute o Script:
-No Roblox Studio: Pressione Play e verifique o output console para logs.
-No Executor: Injete e execute no jogo. O bot começará a coletar itens automaticamente.
+Open your game in Roblox Studio.
+Insert the script as a LocalScript in StarterPlayer > StarterPlayerScripts.
+Enable HttpRequests in Game Settings > Security for webhook logging.
 
-## Teste:
-Spawne itens em Workspace.Items.
-Adicione valores ao inventário manualmente ou via scripts do jogo.
-Monitore o console ou webhook para ações (ex.: "Itens coletados: 10").
+## Executor Setup:
 
-## Parar o Bot:
-O loop é infinito; para parar, feche o jogo ou adicione uma condição de saída (ex.: while not stopFlag do).
+Use an executor such as KRNL ([https://krnl.dev/](https://krnl.dev/)).
+Load the script via loadstring(game\:HttpGet("[https://raw.githubusercontent.com/hygark/RobloxEconomyBot/main/RobloxEconomyBot.lua"))(](https://raw.githubusercontent.com/hygark/RobloxEconomyBot/main/RobloxEconomyBot.lua%22%29%29%28)).
 
-## Exemplos de Uso:
-Teste Básico: Rode em um jogo com itens espalhados. O bot coletará automaticamente e trocará quando o inventário atingir o threshold.
-Logging Avançado: Configure um webhook Discord para receber notificações em tempo real de trocas.
-Expansão: Adicione mais RemoteEvents para jogos específicos.
+## How to Make It Work?:
 
-## Aviso Legal e Ético:
-Este script é para fins educativos e testes privados. Não use em jogos públicos ou para cheating, pois pode resultar em banimentos.
-Sempre respeite os Termos de Serviço do Roblox.
-Para pentest ou automação ética, adapte para cenários legais.
+Adjust the Settings:
+Open the script and edit the Settings table:
+CollectInterval: Time between collections (in seconds).
+TradeThreshold: Minimum value for trade.
+LogWebhook: URL of a Discord webhook (create one in Discord > Server Settings > Integrations).
+NPCTraderName: Name of the NPC for trading.
+MaxItemsToCollect: Limit per cycle.
 
-## Contribuições:
-Sinta-se livre para fork o repositório no GitHub e contribuir com melhorias, como suporte a mais eventos ou integração com GUIs.
+## Run the Script:
+
+In Roblox Studio: Press Play and check the output console for logs.
+In Executor: Inject and run it in-game. The bot will start collecting items automatically.
+
+## Testing:
+
+Spawn items in Workspace.Items.
+Add values to the inventory manually or through game scripts.
+Monitor the console or webhook for actions (e.g., "Items collected: 10").
+
+## Stop the Bot:
+
+The loop is infinite; to stop it, close the game or add an exit condition (e.g., while not stopFlag do).
+
+## Usage Examples:
+
+Basic Test: Run it in a game with scattered items. The bot will automatically collect and trade when the inventory reaches the threshold.
+Advanced Logging: Configure a Discord webhook to receive real-time trade notifications.
+Expansion: Add more RemoteEvents for specific games.
+
+## Legal and Ethical Notice:
+
+This script is for educational and private testing purposes only. Do not use in public games or for cheating, as it may result in bans.
+Always respect Roblox’s Terms of Service.
+For pentesting or ethical automation, adapt it to legal scenarios.
